@@ -3,6 +3,5 @@
 namespace si
 {
 	#include"Vector.h"
-	#include"VectorMath.h"
-
+	#include"Rect.h"
 }

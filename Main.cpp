@@ -4,8 +4,11 @@
 int main()
 {
 
-	si::Vector2f a(0,12);
-	a.x = 35;
-	std::cout << a.x << a.y << std::endl;
+	si::Vector2f f(4, 5) ;
+	si::Vector2f s(1,4);
+	si::Vector2f n = s + f;
+	std::cout << n.x << ' ' << n.y << std::endl;
+	 f *= s;
+	std::cout << f.x << ' ' << f.y << std::endl;
 
 }
