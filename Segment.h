@@ -117,7 +117,7 @@ void si::Segment::findVector()
 }
 float si::Segment::absVector(si::Vector2f _Vector)
 {
-	return sqrt(pow(_Vector.x, 2) + pow(_Vector.y, 2));
+	return sqrt(powf(_Vector.x, 2) + powf(_Vector.y, 2));
 }
 float si::Segment::multiplayVector(si::Vector2f _FVector , si::Vector2f _SVector)
 {
@@ -129,7 +129,7 @@ float si::Segment::angleBetweenVector(si::Segment segment)
 }
 float si::Segment::length(si::Vector2f APoint, si::Vector2f BPoint)
 {
-	return sqrt(pow((BPoint.x - APoint.x), 2) + pow((BPoint.y - APoint.y), 2));
+	return sqrt(powf((BPoint.x - APoint.x), 2) + powf((BPoint.y - APoint.y), 2));
 }
 
 //Function y=kx+b
@@ -163,6 +163,11 @@ si::Segment::Segment(si::Vector2f _First, si::Vector2f _Second):FPoint(_First),S
 		inf = false;
 		k = findK(FPoint, SPoint);
 		b = findB(FPoint, k);
+		if (_First.x > _Second.x)
+		{
+			FPoint = _Second;
+			SPoint = _First;
+		}
 	}
 }
 si::Segment::Segment(si::Vector2f _First, si::Vector2f _Second,si::Vector2f _GlobalPosition): FPoint(_First), SPoint(_Second),GlobalPosition(_GlobalPosition)
@@ -178,6 +183,11 @@ si::Segment::Segment(si::Vector2f _First, si::Vector2f _Second,si::Vector2f _Glo
 		inf = false;
 		k = findK(FPoint, SPoint);
 		b = findB(FPoint, k);
+		if (_First.x > _Second.x)
+		{
+			FPoint = _Second;
+			SPoint = _First;
+		}
 	}
 }
 si::Segment::Segment()
@@ -186,8 +196,9 @@ si::Segment::Segment()
 }
 si::Segment::~Segment()
 {
-	_lenght = 0;
 	k = 0;
 	b = 0;
+	_lenght = 0;
+	_rotate = 0;
 	inf = false;
 }

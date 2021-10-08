@@ -16,7 +16,7 @@ struct Vector2
 	Vector2<V> operator *=(Vector2<V>);
 	Vector2<V> operator /=(Vector2<V>);
 
-	Vector2(){}
+	Vector2():x(V(0)), y(V(0)) {}
 	Vector2(V _x ,V _y):x(_x),y(_y){}
 	~Vector2()
 	{

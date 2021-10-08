@@ -26,7 +26,7 @@ int main()
 			}
 
 		}
-		std::cout << si::collison(si::Segment(si::Vector2f(0, 0), si::Vector2f(1, 1)), si::Segment(si::Vector2f(2, 2), si::Vector2f(3, 6))) << std::endl;
+		std::cout << si::collison(si::Segment(si::Vector2f(2, 3), si::Vector2f(8, 5)), si::Segment(si::Vector2f(9, 1), si::Vector2f(4, 7))) << std::endl;
 		win.clear();
 
 		win.display();
